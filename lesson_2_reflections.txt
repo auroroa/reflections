@@ -4,9 +4,14 @@ Initialized empty Git repository in /Users/zenghui/version-control/reflections/.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
+working directory 是本地的目录，所以更改都是不保存历史记录
+staging area 是暂存目录，在提交到 repository 之前存储本次待提交的一个或多个文件
+repository 是 Git 内部的版本目录，每次提交都保存一个 snapshot
+主要价值在于可以存储一次逻辑提交前的所有变更
 
 How can you use the staging area to make sure you have one commit per logical
 change?
+when you use 'git add xxx' for some files,and then use 'git status' you can see the 'Changed to be commited' files
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
