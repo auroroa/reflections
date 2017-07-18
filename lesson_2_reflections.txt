@@ -5,21 +5,30 @@ Initialized empty Git repository in /Users/zenghui/version-control/reflections/.
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 working directory 是本地的目录，所以更改都是不保存历史记录
-staging area 是暂存目录，在提交到 repository 之前存储本次待提交的一个或多个文件
+staging area 是暂存目录，在提交到 repository 之前存储本次待提交的一个或多个文件（一个提交逻辑）
 repository 是 Git 内部的版本目录，每次提交都保存一个 snapshot
 主要价值在于可以存储一次逻辑提交前的所有变更
 
 How can you use the staging area to make sure you have one commit per logical
 change?
-when you use 'git add xxx' for some files,and then use 'git status' you can see the 'Changed to be commited' files
+when you use 'git add xxx' for some files,and then use 'git status', you can see the 'Changed to be commited' files
+if you don't went commit, you can use 'git reset --hard',however,this command is not allow you get the changes back
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+1.开发实验性功能，在不影响主分支的情况下独立开发；experimental branch
+2.测试主分支之外的逻辑性开发；unique feature branch
+3.解决 bug
 
 How do the diagrams help you visualize the branch structure?
+Make you clear 'detached HEAD' , and how to make a new branch, and the relationship about every commind IDs
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
+The result is that two branches become one branche, the commit infos is combine the one branche , and it order by commit datetime
+两个分支本身从主分支分开后是完全独立的，相互不能访问对方的提交信息，合并的时候是根据主分支产生的差异来的。
 
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+automatic merging 在合并分支不产生冲突的时候节省了时间
+manually mergint 在合并分支产出冲突的时候保障了代码的准确性
